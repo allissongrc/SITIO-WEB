@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Memoria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff8f0;
+    }
+
+    h1 {
+      color: #cc5500;
+    }
+
+    #tablero {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .carta {
+      width: 100px;
+      height: 100px;
+      background-color: #ffa07a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .encontrada {
+      background-color: #20b2aa !important;
+      cursor: default;
+    }
+
+    .volver {
+      margin-top: 40px;
+    }
+
+    .volver a {
+      text-decoration: none;
+      color: #cc5500;
+      font-weight: bold;
+    }
+
+    .volver a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Juego de Memoria</h1>
+  <p>Haz clic en las cartas para encontrar las parejas.</p>
+
+  <div id="tablero"></div>
+
+  <div class="volver">
+    <a href="index.htm">← Volver al inicio</a>
+  </div>
+
+  <script>
+    const emojis = ["🍎", "🍌", "🍇", "🍓", "🍒", "🍉", "🍍", "🥝"];
+    let cartas = [...emojis, ...emojis];
+    cartas.sort(() => 0.5 - Math.random());
+
+    const tablero = document.getElementById("tablero");
+    let seleccionadas = [];
+    let bloqueadas = [];
+
+    cartas.forEach((emoji, index) => {
+      const carta = document.createElement("div");
+      carta.classList.add("carta");
+      carta.dataset.valor = emoji;
+      carta.dataset.index = index;
+      carta.textContent = "";
+
+      carta.addEventListener("click", () => {
+        if (bloqueadas.includes(index) || seleccionadas.length === 2 || carta.textContent) return;
+
+        carta.textContent = emoji;
+        seleccionadas.push({ index, emoji });
+
+        if (seleccionadas.length === 2) {
+          const [primera, segunda] = seleccionadas;
+          if (primera.emoji === segunda.emoji) {
+            document.querySelectorAll(".carta")[primera.index].classList.add("encontrada");
+            document.querySelectorAll(".carta")[segunda.index].classList.add("encontrada");
+            bloqueadas.push(primera.index, segunda.index);
+          } else {
+            setTimeout(() => {
+              document.querySelectorAll(".carta")[primera.index].textContent = "";
+              document.querySelectorAll(".carta")[segunda.index].textContent = "";
+            }, 800);
+          }
+          seleccionadas = [];
+        }
+      });
+
+      tablero.appendChild(carta);
+    });
+  </script>
+
+</body>
+</html>
+
+

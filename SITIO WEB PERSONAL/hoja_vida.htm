@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoja de Vida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #003366;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #005599;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .btn-descargar {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 10px;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-descargar:hover {
+            background-color: #005599;
+        }
+
+        .volver {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .volver a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .volver a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <h1>Hoja de Vida</h1>
+
+        <!-- Foto del alumno -->
+        <img src="foto.jpg" alt="Foto del Alumno">
+
+        <h2>Información Personal</h2>
+        <p><strong>Nombre:</strong> Allisson Marián Pineda García</p>
+        <p><strong>Edad:</strong> 18 años</p>
+        <p><strong>Correo:</strong> allissongarc@email.com</p>
+
+        <h2>Educación</h2>
+        <ul>
+            <li>Bachiller en Ciencias y Letras con Orientación en Computación</li>
+            En Colegio Particular Mixto Bilingüe "Santa Familia"
+            <li>Estudiante de Ingeniería en Sistemas de Información y Ciencias de la Computación</li>
+            En Universidad Mariano Gálvez
+        </ul>
+
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Microsoft Office</li>
+            <li>Soporte técnico básico</li>
+            <li>Responsabilidad y puntualidad</li>
+            <li>Trabajo en Equipo y comunicación efectiva</li>
+        </ul>
+
+        <h2>Experiencia</h2>
+        <p>Práctica Supervisada en Municipalidad de Cuilapa (Agosto 2024)</p>
+        <li>Archivar y redacción de correspondencia</li>
+        <li>Soporte en paquete de Office</li>
+        <li>Instalación de impresora y scanner</li>
+        <li>Limpieza y optimización de equipo</li>
+
+        <a href="mi_cv.pdf" class="btn-descargar" download>Descargar CV en PDF</a>
+
+        <div class="volver">
+            <a href="index.htm">← Volver al inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>

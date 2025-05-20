@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería F1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #c70039; /* rojo tipo F1 */
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .volver {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .volver a {
+            color: #c70039;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .volver a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FÓRMULA 1</h1>
+
+    <div class="galeria">
+        <img src="f1_1.jpg" alt="F1 Imagen 1">
+        <img src="f1_2.jpg" alt="F1 Imagen 2">
+        <img src="f1_3.jpg" alt="F1 Imagen 3">
+        <img src="f1_4.jpg" alt="F1 Imagen 4">
+        <img src="f1_5.jpg" alt="F1 Imagen 5">
+        <img src="f1_6.jpg" alt="F1 Imagen 6">
+        <img src="f1_7.jpg" alt="F1 Imagen 7">
+        <img src="f1_8.jpg" alt="F1 Imagen 8">
+        <img src="f1_9.jpg" alt="F1 Imagen 9">
+        <img src="f1_10.jpg" alt="F1 Imagen 10">
+        <img src="f1_11.jpg" alt="F1 Imagen 11">
+        <img src="f1_12.jpg" alt="F1 Imagen 12">
+    </div>
+
+    <div class="volver">
+        <a href="index.htm">← Volver al inicio</a>
+    </div>
+
+</body>
+</html>
